@@ -1,0 +1,52 @@
+$blue: #3194f7;
+
+body {
+    background: #F6F8FA;
+}
+
+.jumbotron {
+    width: 80%;
+    margin: 0 auto;
+    margin-top: 25px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
+    padding: 25px;
+    background: white;
+}
+
+h1,h2,h3,h4,h5,h6 {
+    color: #333333;
+    font-family: Roboto, sans-serif;
+}
+
+p, label, div, input {
+    color: rgba(28, 34, 65, 0.8);
+    font-family: Merriweather;
+}
+
+.button {
+    font-family: Roboto, sans-serif;
+    border: 2px solid #1c86f2;
+    transition: all 0.25s;
+}
+
+.button.secondary {
+    background: white;
+    color: #1c86f2;
+}
+
+.button:hover,
+.button.secondary:hover {
+    background-color: $blue;
+    border-color: $blue;
+    color: white;
+}
+
+form {
+    width: 25%;
+}
+
+.form-group:not(:last-child) {
+    width: 100%;
+    display: inline-block;
+    margin-bottom: 20px;
+}
