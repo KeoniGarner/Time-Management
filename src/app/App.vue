@@ -1,6 +1,6 @@
 <template>
     <div class="jumbotron">
-        <h1>Time Management</h1>
+        <navigation></navigation>
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -13,10 +13,14 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
+import { mapState, mapActions } from 'vuex';
+// import { Navigation } from '../index.js';
 
 export default {
     name: 'app',
+    // components: {
+    //     Navigation
+    // },
     computed: {
         ...mapState({
             alert: state => state.alert
@@ -32,7 +36,7 @@ export default {
             // clear alert on location change
             this.clearAlert();
         }
-    } 
+    }
 };
 </script>
 

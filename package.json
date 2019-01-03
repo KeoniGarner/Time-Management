@@ -7,12 +7,19 @@
   },
   "license": "MIT",
   "scripts": {
-    "start": "webpack-dev-server --open --config \"Y:\\My Documents\\Github\\Time Management\\webpack.config.js\""
+    "start": "webpack-dev-server --open --config ./webpack.config.js"
   },
   "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-svg-core": "^1.2.12",
+    "@fortawesome/free-solid-svg-icons": "^5.6.3",
+    "@fortawesome/vue-fontawesome": "^0.1.4",
+    "chart.js": "^2.7.3",
     "style-loader": "^0.23.1",
+    "url-loader": "^1.1.2",
     "vee-validate": "^2.1.0-beta.6",
     "vue": "^2.5.16",
+    "vue-chartjs": "^3.4.0",
     "vue-router": "^3.0.1",
     "vuex": "^3.0.1"
   },

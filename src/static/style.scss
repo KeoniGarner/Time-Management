@@ -1,12 +1,17 @@
+@font-face {
+    font-family: Quenda;
+    src: url(../static/fonts/Quenda-Medium.otf);
+}
+
 $blue: #3194f7;
+$gradient: -webkit-linear-gradient(45deg, rgb(0, 110, 255), rgb(255, 0, 221));
+$gradient-hover: -webkit-linear-gradient(45deg, rgb(52, 139, 253), rgb(253, 56, 227));
 
 body {
     background: #F6F8FA;
 }
 
-.jumbotron {
-    width: 80%;
-    margin: 0 auto;
+.container {
     margin-top: 25px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
     padding: 25px;
@@ -18,6 +23,44 @@ h1,h2,h3,h4,h5,h6 {
     font-family: Roboto, sans-serif;
 }
 
+.jumbotron {
+    width: 75%;
+    margin: 0 auto;
+    margin-top: 25px;
+}
+
+nav {
+    width: 100%;
+    border-bottom: 1px solid #3333333b;
+    padding-bottom: 10px;
+    height: 75px;
+}
+
+nav ul {
+    float: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-left: 25px;
+}
+
+nav a {
+    line-height: 4em;
+    color: #333333;
+    text-decoration: none;
+}
+
+.jumbotron h1 {
+    font-family: Quenda;
+    font-size: 3em;
+    float: left;
+}
+
+.jumbotron h1 svg {
+    margin-right: 10px;
+}
+
 p, label, div, input {
     color: rgba(28, 34, 65, 0.8);
     font-family: Merriweather;
@@ -25,20 +68,27 @@ p, label, div, input {
 
 .button {
     font-family: Roboto, sans-serif;
-    border: 2px solid #1c86f2;
+    background: $gradient;
+    border-image: $gradient;
+    border-image-slice: 1;
+    border-width: 2px;
     transition: all 0.25s;
 }
 
 .button.secondary {
-    background: white;
-    color: #1c86f2;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .button:hover,
 .button.secondary:hover {
-    background-color: $blue;
-    border-color: $blue;
+    background: $gradient-hover;
+    border-image: $gradient-hover;
+    border-image-slice: 1;
     color: white;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: white;
 }
 
 form {
@@ -50,3 +100,4 @@ form {
     display: inline-block;
     margin-bottom: 20px;
 }
+

@@ -22,6 +22,11 @@ module.exports = {
                 test: /\.scss?$/,
                 exclude: /(node_modules)/,
                 use: ['style-loader', 'css-loader', 'sass-loader'] // Order is important
+            },
+            {
+                test: /\.otf?$/,
+                exclude: /(node_modules)/,
+                use: ['url-loader'] // Order is important
             }
         ]
     },
