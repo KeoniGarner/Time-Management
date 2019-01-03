@@ -3,58 +3,100 @@
     src: url(../static/fonts/Quenda-Medium.otf);
 }
 
-$blue: #3194f7;
-$gradient: -webkit-linear-gradient(45deg, rgb(0, 110, 255), rgb(255, 0, 221));
-$gradient-hover: -webkit-linear-gradient(45deg, rgb(52, 139, 253), rgb(253, 56, 227));
+$color-scheme: (
+    rgb(0, 110, 255)
+    rgb(255, 0, 211)
+);
+$text: #333333;
+$background: rgb(241, 243, 245);
+$card: rgb(255, 255, 255);
+$nav: rgb(255, 255, 255);
+$gradient: -webkit-linear-gradient(45deg, nth($color-scheme, 1), nth($color-scheme, 2));
+$gradient-hover: -webkit-linear-gradient(45deg, lighten(nth($color-scheme, 1), 5%), lighten(nth($color-scheme, 2), 5%));
+$shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
 
 body {
-    background: #F6F8FA;
+    background: $background;
 }
 
 .container {
     margin-top: 25px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
     padding: 25px;
-    background: white;
 }
 
 h1,h2,h3,h4,h5,h6 {
-    color: #333333;
+    color: $text;
     font-family: Roboto, sans-serif;
 }
 
 .jumbotron {
-    width: 75%;
-    margin: 0 auto;
-    margin-top: 25px;
+    width: 100%;
 }
 
 nav {
-    width: 100%;
-    border-bottom: 1px solid #3333333b;
+    width: 16%;
     padding-bottom: 10px;
     height: 75px;
-}
-
-nav ul {
-    float: right;
+    position: fixed;
+    left: 0;
+    padding-right: 25px;
+    background: $nav;
+    height: 100vh;
+    box-shadow: $shadow;
 }
 
 nav ul li {
-    display: inline-block;
-    margin-left: 25px;
+    height: 50px;
+    padding: 12.5px;
+    width: 128%;
+    margin-left: -15%;
+    text-align: right;
+    transition: all 0.25s;
+    padding-right: 20px;
+    cursor: pointer;
+}
+
+nav ul li:hover {
+    background: $gradient;
+    box-shadow: $shadow;
+}
+
+nav ul li:hover > a {
+    background: transparent;
+    border-image: transparent;
+    border-image-slice: 1;
+    color: white;
+    -webkit-background-clip: none;
+    -webkit-text-fill-color: white;
+    font-size: 2em;
 }
 
 nav a {
-    line-height: 4em;
-    color: #333333;
+    font-size: 1.5em;
+    background: $gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 800;
+    transition: all 0.25s;
 }
 
-.jumbotron h1 {
-    font-family: Quenda;
-    font-size: 3em;
-    float: left;
+nav icon {
+    font-size: 80px;
+    color: $text;
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    margin: 0 auto;
+    margin-top: 10px;
+}
+
+nav h1 {
+    font-size: 2.5em;
+    width: 100%;
+    text-align: center;
+    font-family: 'Martel Sans';
 }
 
 .jumbotron h1 svg {
@@ -101,3 +143,18 @@ form {
     margin-bottom: 20px;
 }
 
+.card {
+    padding: 10px;
+}
+
+.card .card-interior {
+    background-color: $card;
+    box-shadow: $shadow;
+    border-radius: 5px;
+}
+
+.card h1 {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 2em;
+}

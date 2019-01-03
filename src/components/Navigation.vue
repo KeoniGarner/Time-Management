@@ -1,13 +1,15 @@
 <template>
     <div>
         <nav>
-            <h1><font-awesome-icon icon="clock" />STOPWATCH</h1>
+            <icon>
+                <font-awesome-icon icon="clock" />
+            </icon>
+            <h1>Stopwatch.</h1>
             <ul>
                 <li><router-link class="nav link" to="/">Time Entry</router-link></li>
                 <li><router-link class="nav link" to="/">Data</router-link></li>
                 <li><router-link class="nav link" to="/">Guidelines</router-link></li>
-                <li><router-link class="nav link" to="/login">Login</router-link></li>
-                <li><router-link class="nav link" to="/register">Register</router-link></li>
+                <li><router-link class="nav link" to="/login">Logout</router-link></li>
             </ul>
         </nav>
     </div>

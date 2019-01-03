@@ -1,11 +1,13 @@
 <template>
     <div class="jumbotron">
-        <navigation></navigation>
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div v-if="alert.message" :class="`alert ${alert.type}`">{{alert.message}}</div>
-                    <router-view></router-view>
+        <div class="row">
+            <navigation></navigation>
+            <div class="container col-10 offset-2">
+                <div class="row">
+                    <div class="col-12">
+                        <div v-if="alert.message" :class="`alert ${alert.type}`">{{alert.message}}</div>
+                        <router-view></router-view>
+                    </div>
                 </div>
             </div>
         </div>
@@ -14,13 +16,9 @@
 
 <script>
 import { mapState, mapActions } from 'vuex';
-// import { Navigation } from '../index.js';
 
 export default {
     name: 'app',
-    // components: {
-    //     Navigation
-    // },
     computed: {
         ...mapState({
             alert: state => state.alert
