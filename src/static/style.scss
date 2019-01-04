@@ -4,36 +4,40 @@
 }
 
 $color-scheme: (
-    rgb(0, 110, 255)
-    rgb(255, 0, 211)
+    #FF9B00
+    #1C1259
 );
-$text: #333333;
-$background: rgb(241, 243, 245);
+$title: #FF9B00;
+$text: #1C1259;
+$background: rgb(230, 231, 240);
 $card: rgb(255, 255, 255);
-$nav: rgb(255, 255, 255);
-$gradient: -webkit-linear-gradient(45deg, nth($color-scheme, 1), nth($color-scheme, 2));
-$gradient-hover: -webkit-linear-gradient(45deg, lighten(nth($color-scheme, 1), 5%), lighten(nth($color-scheme, 2), 5%));
+$nav: white;
+$gradient: #FF9B00;
+// $gradient: -webkit-linear-gradient(45deg, nth($color-scheme, 1), nth($color-scheme, 2));
+$gradient-hover: lighten($gradient, 5%);
+// $gradient-hover: -webkit-linear-gradient(45deg, lighten(nth($color-scheme, 1), 5%), lighten(nth($color-scheme, 2), 5%));
 $shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
 
 body {
     background: $background;
 }
 
+h1,h2,h3,h4,h5,h6 {
+    color: $title;
+    font-family: Roboto, sans-serif;
+}
+
 .container {
     margin-top: 25px;
     padding: 25px;
-}
-
-h1,h2,h3,h4,h5,h6 {
     color: $text;
-    font-family: Roboto, sans-serif;
 }
 
 .jumbotron {
     width: 100%;
 }
 
-nav {
+.jumbotron > .row > div > nav {
     width: 16%;
     padding-bottom: 10px;
     height: 75px;
@@ -45,25 +49,25 @@ nav {
     box-shadow: $shadow;
 }
 
-nav ul li {
+.jumbotron > .row > div > nav > ul > a > li {
     height: 50px;
     padding: 12.5px;
-    width: 128%;
+    width: 130%;
     margin-left: -15%;
     text-align: right;
     transition: all 0.25s;
-    padding-right: 20px;
+    padding-right: 35px;
     cursor: pointer;
 }
 
-nav ul li:hover {
+.jumbotron > .row > div > nav > ul > a > li:hover {
     background: $gradient;
     box-shadow: $shadow;
 }
 
-nav ul li:hover > a {
-    background: transparent;
-    border-image: transparent;
+.jumbotron > .row > div > nav > ul > a > li:hover {
+    background: $gradient;
+    border-image: $gradient;
     border-image-slice: 1;
     color: white;
     -webkit-background-clip: none;
@@ -71,20 +75,24 @@ nav ul li:hover > a {
     font-size: 2em;
 }
 
-nav a {
+.jumbotron > .row > div > nav > ul > a > li {
     font-size: 1.5em;
-    background: $gradient;
+    background: $text;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     text-decoration: none;
     font-family: Roboto, sans-serif;
     font-weight: 800;
-    transition: all 0.25s;
+    transition: font-size 0.25s;
 }
 
-nav icon {
+.jumbotron > .row > div > nav > ul > a {
+    text-decoration: none;
+}
+
+.jumbotron > .row > div > nav > .icon {
     font-size: 80px;
-    color: $text;
+    color: $title;
     width: 100%;
     text-align: center;
     display: inline-block;
@@ -92,7 +100,7 @@ nav icon {
     margin-top: 10px;
 }
 
-nav h1 {
+.jumbotron > .row > div > nav > h1 {
     font-size: 2.5em;
     width: 100%;
     text-align: center;
@@ -121,13 +129,13 @@ p, label, div, input {
     background: $gradient;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    border-image-slice: 1;
 }
 
 .button:hover,
 .button.secondary:hover {
     background: $gradient-hover;
     border-image: $gradient-hover;
-    border-image-slice: 1;
     color: white;
     -webkit-background-clip: none;
     -webkit-text-fill-color: white;
@@ -135,6 +143,10 @@ p, label, div, input {
 
 form {
     width: 25%;
+}
+
+form h2 {
+    color: $text;
 }
 
 .form-group:not(:last-child) {
@@ -157,4 +169,13 @@ form {
     margin: 0 auto;
     text-align: center;
     font-size: 2em;
+}
+
+div h1 {
+    color: $text;
+}
+
+.VuePagination > nav > ul > li {
+    display: inline-block;
+    width: auto;
 }

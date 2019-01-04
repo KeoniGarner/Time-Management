@@ -35,7 +35,6 @@
                 </div>
             </div>
         </div>
-        <button @click="refreshData" class="button">RANDOM DATA</button>
     </div>
 </template>
 
@@ -51,36 +50,18 @@ export default {
                     {
                         label: 'This Year',
                         backgroundColor: [
-                            'rgba(0,0,255,1.00)',
-                            'rgba(0,0,255,0.94)',
-                            'rgba(0,0,255,0.88)',
-                            'rgba(0,0,255,0.82)',
-                            'rgba(0,0,255,0.76)',
-                            'rgba(0,0,255,0.70)',
-                            'rgba(0,0,255,0.64)',
-                            'rgba(0,0,255,0.58)',
-                            'rgba(0,0,255,0.52)',
-                            'rgba(0,0,255,0.46)',
-                            'rgba(0,0,255,0.40)',
-                            'rgba(0,0,255,0.34)',
-                        ],
-                        data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
-                    },
-                    {
-                        label: 'Last Year',
-                        backgroundColor: [
-                            'rgba(100,0,255,1.00)',
-                            'rgba(100,0,255,0.94)',
-                            'rgba(100,0,255,0.88)',
-                            'rgba(100,0,255,0.82)',
-                            'rgba(100,0,255,0.76)',
-                            'rgba(100,0,255,0.70)',
-                            'rgba(100,0,255,0.64)',
-                            'rgba(100,0,255,0.58)',
-                            'rgba(100,0,255,0.52)',
-                            'rgba(100,0,255,0.46)',
-                            'rgba(100,0,255,0.40)',
-                            'rgba(100,0,255,0.34)',
+                            '#1C1259',
+                            '#EE4266',
+                            '#FF9B00',
+                            '#1C1259',
+                            '#EE4266',
+                            '#FF9B00',
+                            '#1C1259',
+                            '#EE4266',
+                            '#FF9B00',
+                            '#1C1259',
+                            '#EE4266',
+                            '#FF9B00',
                         ],
                         data: [this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt(), this.getRandomInt()]
                     },
@@ -91,11 +72,6 @@ export default {
                 maintainAspectRatio: false
             }
         }
-    },
-    mounted () {
-        setInterval(() => {
-            this.refreshData()
-      }, 2000)
     },
     computed: {
         ...mapState({

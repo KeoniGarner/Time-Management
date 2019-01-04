@@ -7,6 +7,7 @@ import App from './app/App';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
+import { ServerTable, ClientTable, Event } from 'vue-tables-2';
 import Navigation from './components/Navigation';
 import BarChart from './components/BarChart';
 import DoughnutChart from './components/DoughnutChart';
@@ -23,6 +24,8 @@ Vue.component('line-chart', LineChart);
 Vue.component('pie-chart', PieChart);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 
+Vue.use(ClientTable);
+Vue.use(ServerTable);
 Vue.use(VeeValidate);
 
 // setup fake backend
