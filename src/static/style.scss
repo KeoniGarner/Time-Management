@@ -58,15 +58,20 @@ h1,h2,h3,h4,h5,h6 {
     transition: all 0.25s;
     padding-right: 35px;
     cursor: pointer;
+    font-size: 1.5em;
+    background: $text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration: none;
+    font-family: Roboto, sans-serif;
+    font-weight: 800;
+    transition: font-size 0.25s;
 }
 
-.jumbotron > .row > div > nav > ul > a > li:hover {
+.jumbotron > .row > div > nav > ul > a > li:hover,
+.jumbotron > .row > div > nav > ul > a.router-link-exact-active > li {
     background: $gradient;
     box-shadow: $shadow;
-}
-
-.jumbotron > .row > div > nav > ul > a > li:hover {
-    background: $gradient;
     border-image: $gradient;
     border-image-slice: 1;
     color: white;
@@ -178,4 +183,25 @@ div h1 {
 .VuePagination > nav > ul > li {
     display: inline-block;
     width: auto;
+}
+
+.enter-time {
+    padding: 25px;
+}
+
+.enter-time > form {
+    width: 100%;
+}
+
+.enter-time > form > div {
+    margin-top: 10px;
+}
+
+.enter-time > form > div > textarea {
+    resize: none;
+    height: 150px;
+}
+
+.enter-time > form > div > div > input[type="submit"] {
+    width: 100%;
 }
