@@ -1,6 +1,6 @@
 @font-face {
     font-family: Quenda;
-    src: url(../static/fonts/Quenda-Medium.otf);
+    src: url(./static/fonts/Quenda-Medium.otf);
 }
 
 $color-scheme: (
@@ -69,7 +69,7 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 .jumbotron > .row > div > nav > ul > a > li:hover,
-.jumbotron > .row > div > nav > ul > a.router-link-exact-active > li {
+.jumbotron > .row > div > nav > ul > a.router-link-exact-active.nav-link > li {
     background: $gradient;
     box-shadow: $shadow;
     border-image: $gradient;
@@ -78,6 +78,10 @@ h1,h2,h3,h4,h5,h6 {
     -webkit-background-clip: none;
     -webkit-text-fill-color: white;
     font-size: 2em;
+}
+
+.jumbotron > .row > div > nav > ul > a.router-link-exact-active:not(.nav-link) > li {
+    display: none;
 }
 
 .jumbotron > .row > div > nav > ul > a > li {

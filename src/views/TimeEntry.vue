@@ -49,15 +49,8 @@
 </template>
 
 <script>
-import { mapState, mapActions } from 'vuex'
 
 export default {
-    computed: {
-        ...mapState({
-            account: state => state.account,
-            users: state => state.users.all
-        })
-    },
     data: function() {
         return {
             columns: ['Date', 'Category', 'Description', 'Hours'],

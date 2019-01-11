@@ -1,10 +1,9 @@
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
 
-import { store } from './_store';
-import { router } from './_helpers';
+import { router } from './router';
 
-import App from './app/App';
+import App from './App';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faClock } from '@fortawesome/free-solid-svg-icons';
@@ -13,12 +12,11 @@ import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { ServerTable, ClientTable, Event } from 'vue-tables-2';
 
 import Navigation from './components/Navigation';
-
-import BarChart from './components/BarChart';
 import DoughnutChart from './components/DoughnutChart';
-import RadarChart from './components/RadarChart';
+import BarChart from './components/BarChart';
 import LineChart from './components/LineChart';
 import PieChart from './components/PieChart';
+import RadarChart from './components/RadarChart';
 
 import VModal from 'vue-js-modal';
 
@@ -37,14 +35,9 @@ Vue.use(ClientTable);
 Vue.use(ServerTable);
 Vue.use(VeeValidate);
 
-// setup fake backend
-import { configureFakeBackend } from './_helpers';
-import { Pie } from 'vue-chartjs';
-configureFakeBackend();
 
 new Vue({
     el: '#app',
     router,
-    store,
     render: h => h(App)
 });
