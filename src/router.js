@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import firebase from 'firebase';
 
 import Dashboard from './views/Dashboard';
 import Login from './views/Login';
@@ -11,25 +12,23 @@ Vue.use(Router);
 export const router = new Router({
     mode: 'history',
     routes: [
-        { path: '/', component: Dashboard },
+        { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
         { path: '/login', component: Login },
         { path: '/register', component: Register },
-        { path: '/entry', component: TimeEntry },
+        { path: '/entry', component: TimeEntry, meta: { requiresAuth: true } },
 
         // otherwise redirect to home
-        { path: '*', redirect: '/' }
+        { path: '*', redirect: '/dashboard' }
     ]
 });
 
 router.beforeEach((to, from, next) => {
-    // redirect to login page if not logged in and trying to access a restricted page
-    const publicPages = ['/login', '/register'];
-    const authRequired = !publicPages.includes(to.path);
-    const loggedIn = localStorage.getItem('user');
+    const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
+    const isAuthenticated = firebase.auth().currentUser;
 
-    if (authRequired && !loggedIn) {
-        return next('/login');
+    if (requiresAuth && !isAuthenticated) {
+      next('/signin');
+    } else {
+      next();
     }
-
-    next();
-})
+});

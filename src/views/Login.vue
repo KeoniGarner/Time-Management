@@ -3,12 +3,12 @@
         <form @submit.prevent="handleSubmit">
             <h2>Login</h2>
             <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" name="username" class="form-control" />
+                <label for="email">Email</label>
+                <input type="text" name="email" v-model="email" class="form-control" />
             </div>
             <div class="form-group">
                 <label htmlFor="password">Password</label>
-                <input type="password" name="password" class="form-control" />
+                <input type="password" name="password" v-model="password" class="form-control" />
             </div>
             <div class="form-group">
                 <button class="button">Login</button>
@@ -22,10 +22,35 @@
 export default {
     data () {
         return {
-            username: '',
+            email: '',
             password: '',
             submitted: false
         }
     },
+    methods: {
+        handleSubmit() {
+            this.$store.dispatch('signUserIn', { email: this.email, password: this.password });
+        }
+    },
+    computed: {
+        error () {
+        return this.$store.state.error;
+        },
+        loading () {
+        return this.$store.state.loading;
+        }
+    },
+    watch: {
+        error (value) {
+        if (value) {
+            this.alert = true;
+        }
+        },
+        alert (value) {
+        if (!value) {
+            this.$store.commit('setError', null);
+        }
+        }
+    }
 };
 </script>

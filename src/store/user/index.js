@@ -22,7 +22,7 @@ export default {
               name: user.displayName,
               email: user.email,
               photoUrl: user.photoURL
-            }
+            };
             commit('setUser', newUser);
           }
         )
@@ -188,6 +188,9 @@ export default {
   getters: {
     user (state) {
       return state.user;
+    },
+    isAuthenticated (state) {
+      return state.user !== null && state.user !== undefined;
     }
   }
-}
+};

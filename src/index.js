@@ -1,7 +1,10 @@
 import Vue from 'vue';
 import VeeValidate from 'vee-validate';
 
+import * as firebase from './config/firebase.config';
+
 import { router } from './router';
+import { store } from './store';
 
 import App from './App';
 
@@ -35,9 +38,20 @@ Vue.use(ClientTable);
 Vue.use(ServerTable);
 Vue.use(VeeValidate);
 
+console.log(firebase.firebaseAuth);
 
-new Vue({
-    el: '#app',
-    router,
-    render: h => h(App)
+const unsubscribe = firebase.firebaseAuth()
+.onAuthStateChanged((firebaseUser) => {
+    new Vue({
+        el: '#app',
+        router,
+        store,
+        render: h => h(App),
+        created () {
+            if (firebaseUser) {
+                store.dispatch('autoSignIn', firebaseUser);
+            }
+        }
+    });
+    unsubscribe();
 });

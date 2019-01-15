@@ -39,6 +39,8 @@
 </template>
 
 <script>
+import ref from '../config/firebase.config'
+
 export default {
     data: function() {
         return {
