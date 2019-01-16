@@ -22,6 +22,36 @@ body {
     background: $background;
 }
 
+.router-enter-active {
+    animation: fadeIn .6s ease-in;
+}
+@keyframes fadeIn{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+.router-leave-active{
+    animation: fadeOut .3s ease-in;
+}
+@keyframes fadeOut{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+
 h1,h2,h3,h4,h5,h6 {
     color: $title;
     font-family: Roboto, sans-serif;

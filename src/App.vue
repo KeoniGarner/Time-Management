@@ -5,7 +5,9 @@
             <div class="container col-10 offset-2">
                 <div class="row">
                     <div class="col-12">
-                        <router-view></router-view>
+                        <transition name="router">
+                            <router-view></router-view>
+                        </transition>
                     </div>
                 </div>
             </div>

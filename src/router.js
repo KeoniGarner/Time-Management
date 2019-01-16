@@ -12,23 +12,42 @@ Vue.use(Router);
 export const router = new Router({
     mode: 'history',
     routes: [
-        { path: '/dashboard', component: Dashboard, meta: { requiresAuth: true } },
-        { path: '/login', component: Login },
-        { path: '/register', component: Register },
-        { path: '/entry', component: TimeEntry, meta: { requiresAuth: true } },
+        { 
+            name: 'dashboard',
+            path: '/dashboard',
+            component: Dashboard, 
+            meta: { requiresAuth: true }
+        },
+        { 
+            name: 'login', 
+            path: '/login', 
+            component: Login 
+        },
+        { 
+            name: 'register', 
+            path: '/register', 
+            component: Register 
+        },
+        { 
+            name: 'entry', 
+            path: '/entry', 
+            component: TimeEntry, 
+            meta: { requiresAuth: true } },
 
         // otherwise redirect to home
-        { path: '*', redirect: '/dashboard' }
+        { name:'catch-all', path: '*', redirect: '/dashboard' }
     ]
 });
 
 router.beforeEach((to, from, next) => {
     const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
     const isAuthenticated = firebase.auth().currentUser;
-
+    
     if (requiresAuth && !isAuthenticated) {
-      next('/signin');
+        next('login');
+    } else if (!requiresAuth && isAuthenticated) {
+        next();
     } else {
-      next();
+        next();
     }
 });

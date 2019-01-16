@@ -1,4 +1,5 @@
 import * as firebase from 'firebase';
+import { router } from '../../router';
 
 export default {
   state: {
@@ -24,6 +25,7 @@ export default {
               photoUrl: user.photoURL
             };
             commit('setUser', newUser);
+            router.push('dashboard');
           }
         )
         .catch(
@@ -48,6 +50,7 @@ export default {
               photoUrl: user.photoURL
             };
             commit('setUser', newUser);
+            router.push('dashboard');
           }
         )
         .catch(
@@ -72,6 +75,7 @@ export default {
               photoUrl: user.photoURL
             };
             commit('setUser', newUser);
+            router.push('dashboard');
           }
         )
         .catch(
@@ -96,6 +100,7 @@ export default {
               photoUrl: user.photoURL
             };
             commit('setUser', newUser);
+            router.push('dashboard');
           }
         )
         .catch(
@@ -120,6 +125,7 @@ export default {
               photoUrl: user.photoURL
             };
             commit('setUser', newUser);
+            router.push('dashboard');
           }
         )
         .catch(
@@ -144,6 +150,7 @@ export default {
               photoUrl: user.photoURL
             }
             commit('setUser', newUser);
+            router.push('dashboard');
           }
         )
         .catch(

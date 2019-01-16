@@ -27,29 +27,41 @@ export default {
             submitted: false
         }
     },
+    mounted () {
+        this.logout();
+    },
     methods: {
+        logout() {
+            this.$store.dispatch('logout');
+        },
         handleSubmit() {
-            this.$store.dispatch('signUserIn', { email: this.email, password: this.password });
+            this.$store.dispatch('signUserIn', { email: this.email, password: this.password })
+                .then(() => {
+                    this.$router.push({name:'dashboard'});
+                })
+                .catch(() => {
+
+                });
         }
     },
     computed: {
         error () {
-        return this.$store.state.error;
+            return this.$store.state.error;
         },
         loading () {
-        return this.$store.state.loading;
+            return this.$store.state.loading;
         }
     },
     watch: {
         error (value) {
-        if (value) {
-            this.alert = true;
-        }
+            if (value) {
+                this.alert = true;
+            }
         },
         alert (value) {
-        if (!value) {
-            this.$store.commit('setError', null);
-        }
+            if (!value) {
+                this.$store.commit('setError', null);
+            }
         }
     }
 };
