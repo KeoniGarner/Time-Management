@@ -1,3 +1,5 @@
+// TODO: Delete entry and edit entry
+
 <template>
     <div>
         <h1>Time Entry</h1>
@@ -107,8 +109,8 @@ export default {
 
         }
     },
-    mounted () {
-        this.getTimeEntries()
+    created () {
+        this.getTimeEntries();
     }
 }
 </script>

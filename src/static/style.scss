@@ -18,6 +18,12 @@ $gradient-hover: lighten($gradient, 5%);
 // $gradient-hover: -webkit-linear-gradient(45deg, lighten(nth($color-scheme, 1), 5%), lighten(nth($color-scheme, 2), 5%));
 $shadow: 0px 0px 10px rgba(0, 0, 0, 0.144);
 
+$work: #00635d;
+$personal-development: #1C1259;
+$vacation: #FF9B00;
+$travel: #08a4bd;
+$meetings: #EE4266;
+
 body {
     background: $background;
 }
@@ -238,4 +244,40 @@ div h1 {
 
 .enter-time > form > div > div > input[type="submit"] {
     width: 100%;
+}
+
+.number {
+    margin: 0 !important;
+    text-align: left !important;
+    font-size: 3em !important;
+}
+
+.number > span {
+    color: rgb(80, 80, 80);
+    font-size: 1em !important;
+}
+
+.card-interior > p {
+    font-family: Roboto
+}
+
+.card-interior {
+    padding: 20px;
+    padding-bottom: 10px;
+}
+
+#productive {
+    color: $work;
+}
+
+#unproductive {
+    color: $meetings;
+}
+
+#travel {
+    color: $travel;
+}
+
+#vacation {
+    color: $vacation;
 }

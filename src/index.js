@@ -40,8 +40,7 @@ Vue.use(VeeValidate);
 
 console.log(firebase.firebaseAuth);
 
-const unsubscribe = firebase.firebaseAuth()
-.onAuthStateChanged((firebaseUser) => {
+firebase.firebaseListener((firebaseUser) => {
     new Vue({
         el: '#app',
         router,
@@ -53,5 +52,4 @@ const unsubscribe = firebase.firebaseAuth()
             }
         }
     });
-    unsubscribe();
 });

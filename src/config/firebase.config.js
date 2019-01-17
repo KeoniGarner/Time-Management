@@ -2,7 +2,12 @@ import firebase from 'firebase';
 
 
 const config = {
-    //Put Config here
+    apiKey: "AIzaSyCmUBQlnKlflkG77J_C9KjQn2fNP0A7X3Q",
+    authDomain: "stopwatch-ab027.firebaseapp.com",
+    databaseURL: "https://stopwatch-ab027.firebaseio.com",
+    projectId: "stopwatch-ab027",
+    storageBucket: "stopwatch-ab027.appspot.com",
+    messagingSenderId: "507143090007"
 };
 
 firebase.initializeApp(config);

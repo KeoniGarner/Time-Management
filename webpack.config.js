@@ -1,5 +1,6 @@
 var path = require('path');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     mode: 'development',
@@ -30,9 +31,12 @@ module.exports = {
             }
         ]
     },
-    plugins: [new HtmlWebpackPlugin({
-        template: path.join(__dirname, '/src/index.html')
-    })],
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: path.join(__dirname, '/src/index.html')
+        }),
+        new VueLoaderPlugin()
+    ],
     devServer: {
         historyApiFallback: true
     },
